@@ -1,25 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
+import { AgmCoreModule } from '@agm/core';
 
 import { IonicModule } from '@ionic/angular';
 
 import { SetLocationPage } from './set-location.page';
 
-const routes: Routes = [
-  {
-    path: '',
-    component: SetLocationPage
-  }
-];
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    //import agmcoremodule with apikey
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyB8FPbWLlijfbzfyykp308MCZGsQ7Ge-tQ'
+    })
   ],
   declarations: [SetLocationPage]
 })

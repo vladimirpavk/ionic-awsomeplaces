@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
+import { AgmCoreModule } from '@agm/core';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -10,15 +11,14 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AddPlacePageModule } from './add-place/add-place.module';
 import { PlacePageModule } from './place/place.module';
-import { SetLocationPageModule } from './set-location/set-location.module';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
-    BrowserModule,   
+    BrowserModule, 
     IonicModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,    
   ],
   providers: [
     StatusBar,

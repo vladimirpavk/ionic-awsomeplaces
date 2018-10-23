@@ -1,9 +1,90 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>add-place</ion-title>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="home" text="" icon="arrow-dropleft-circle"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Add place</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-<ion-content padding>
-
+<ion-content padding> 
+  <form #f="ngForm" (ngSubmit)="formSubmitted(f)">
+    <ion-list>
+    <ion-item>
+      <ion-label position="fixed" color="primary">Title</ion-label>
+      <ion-input type="text" placeholder="Beautiful flower..." name="title" ngModel required></ion-input>          
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="primary">Short description</ion-label>
+      <ion-textarea name="description" ngModel required></ion-textarea>
+    </ion-item>
+    </ion-list>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button
+          expand="block"
+          fill="outline"
+          type="button"
+          icon-left              
+          (click)="onLocate()">
+          <ion-icon name="locate" slot="start"></ion-icon>
+          Locate me
+        </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button
+            expand="block"
+            fill="outline"
+            type="button"
+            icon-left
+            (click)="onOpenMap()">
+            <ion-icon name="map" slot="start"></ion-icon>
+            Select on map
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <p>Selected place...</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <h5>Take a Photo!</h5>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button
+            expand="block"
+            fill="outline"
+            type="button"
+            icon-left
+            (click)="onTakePhoto()">
+            <ion-icon slot="start" name="camera"></ion-icon>
+            Open Camera
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+        <img [src]="">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+        <ion-button
+          color="secondary"
+          expand="block"
+          fill="solid"
+          type="submit"
+          [disabled]="!f.valid"
+          >
+          Add this place
+        </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
 </ion-content>
