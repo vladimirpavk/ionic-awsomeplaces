@@ -4,15 +4,44 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding display="border: 1px solid;">
-  <ion-grid display="border: 1px solid;">    
+<ion-content padding>
+  <ion-grid>    
     <ion-row>
       <ion-col>     
-        <agm-map></agm-map>
+        <agm-map
+          [latitude]="location.lat"
+          [longitude]="location.lon"
+          [zoom]="16"
+          (mapClick)="onMapClicked($event)"
+        >
+        <agm-marker
+          *ngIf="markerLocation"
+          [latitude]="markerLocation.lat"
+          [longitude]="markerLocation.lon"
+        ></agm-marker>
+        </agm-map>        
       </ion-col>
     </ion-row>
-  </ion-grid>
-  <!--<div style="height:300px; border: 1px solid; width:100%;">       
-  </div>  
-  <agm-map style="height:300px; border: 1px solid; width:100%;"></agm-map>-->
+    <ion-row>
+      <ion-col>
+        <ion-button
+          expand="block"
+          fill="outline"
+          (click)="onDismiss()"
+          color="danger">
+          Dissmis
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button
+          expand="block"
+          fill="outline"
+          (click)="onSetLocation()"
+          [disabled]="!markerLocation"
+          color="secondary">
+          Set location
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>  
 </ion-content>

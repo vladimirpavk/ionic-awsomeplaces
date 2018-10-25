@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
+import { AgmCoreModule } from '@agm/core';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 import { AddPlacePage } from './add-place.page';
 import { SetLocationPageModule } from '../set-location/set-location.module';
@@ -21,6 +23,9 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     SetLocationPageModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyB8FPbWLlijfbzfyykp308MCZGsQ7Ge-tQ'
+    }),
     RouterModule.forChild(routes)
   ],
   entryComponents:[
@@ -28,6 +33,9 @@ const routes: Routes = [
   ],
   declarations: [
     AddPlacePage
+  ],
+  providers:[
+    Geolocation
   ]
 })
 export class AddPlacePageModule {}
