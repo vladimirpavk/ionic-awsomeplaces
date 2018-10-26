@@ -6,7 +6,6 @@ const routes: Routes = [
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'place', loadChildren: './place/place.module#PlacePageModule' },
   { path: 'add-place', loadChildren: './add-place/add-place.module#AddPlacePageModule' },
-  { path: 'set-location', loadChildren: './set-location/set-location.module#SetLocationPageModule' },
 ];
 
 @NgModule({

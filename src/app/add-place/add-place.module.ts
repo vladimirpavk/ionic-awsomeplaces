@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { AgmCoreModule } from '@agm/core';
+
+//native API
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { Camera } from '@ionic-native/camera/ngx';
 
 import { AddPlacePage } from './add-place.page';
-import { SetLocationPageModule } from '../set-location/set-location.module';
 import { SetLocationPage } from '../set-location/set-location.page';
 
 const routes: Routes = [
@@ -21,8 +23,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
-    IonicModule,
-    SetLocationPageModule,
+    IonicModule,        
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB8FPbWLlijfbzfyykp308MCZGsQ7Ge-tQ'
     }),
@@ -32,10 +33,12 @@ const routes: Routes = [
     SetLocationPage
   ],
   declarations: [
-    AddPlacePage
+    AddPlacePage,
+    SetLocationPage
   ],
   providers:[
-    Geolocation
+    Geolocation,
+    Camera
   ]
 })
 export class AddPlacePageModule {}

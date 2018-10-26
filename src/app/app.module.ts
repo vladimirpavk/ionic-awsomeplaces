@@ -12,6 +12,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AddPlacePageModule } from './add-place/add-place.module';
 import { PlacePageModule } from './place/place.module';
 
+import { PlacesService } from './services/places.services';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -23,7 +25,8 @@ import { PlacePageModule } from './place/place.module';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    PlacesService
   ],
   bootstrap: [AppComponent]
 })
