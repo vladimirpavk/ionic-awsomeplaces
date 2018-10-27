@@ -30,7 +30,7 @@
     "cordova-plugin-camera": "^4.0.3",
     "cordova-plugin-geolocation": "^4.0.1",
     "core-js": "^2.5.3",
-    "rxjs": "6.2.2",
+    "rxjs": "^6.2.2",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

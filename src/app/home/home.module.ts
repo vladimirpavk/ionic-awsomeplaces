@@ -4,13 +4,19 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
+import { AgmCoreModule } from '@agm/core';
+
 import { HomePage } from './home.page';
+import { PlacePage } from '../place/place.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyB8FPbWLlijfbzfyykp308MCZGsQ7Ge-tQ'
+    }),
     RouterModule.forChild([
       {
         path: '',
@@ -18,6 +24,12 @@ import { HomePage } from './home.page';
       }
     ])
   ],
-  declarations: [HomePage]
+  declarations: [
+    HomePage,
+    PlacePage
+  ],
+  entryComponents: [
+    PlacePage
+  ]
 })
 export class HomePageModule {}

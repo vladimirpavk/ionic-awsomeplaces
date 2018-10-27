@@ -48,7 +48,7 @@ export class AddPlacePage implements OnInit {
         ''
       )
     );
-    console.log(this.placesService.getPlaces());
+    //console.log(this.placesService.getPlaces());
     this.router.navigate(['/home']);
   }
 
@@ -80,8 +80,7 @@ export class AddPlacePage implements OnInit {
 
   private onOpenMap():void{
     const modal = this.modalCtrl.create({
-      component: SetLocationPage,
-      componentProps: { 'location': this.location }
+      component: SetLocationPage
     }).then(
       (modalDialog)=>{
         modalDialog.onDidDismiss().then(
