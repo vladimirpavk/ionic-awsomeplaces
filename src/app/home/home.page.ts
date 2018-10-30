@@ -4,6 +4,7 @@ import { Place } from '../models/place';
 import { Subscription } from 'rxjs';
 import { ModalController } from '@ionic/angular';
 import { PlacePage } from '../place/place.page';
+import { FirebaseActiveService } from '../services/firebase-active.service';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,8 @@ export class HomePage implements OnInit, OnDestroy{
 
   constructor(
     private modalCtrl:ModalController,
-    private placesService:PlacesService
+    private placesService:PlacesService,
+    private firebaseActiveService:FirebaseActiveService
   ){}
 
   ngOnInit(){
@@ -43,6 +45,14 @@ export class HomePage implements OnInit, OnDestroy{
         modalDialog.present();
       }
     )
+  }
+
+  private check():void{
+    this.firebaseActiveService.setStorageValue();
+  }
+
+  private check2(){
+    console.log(this.firebaseActiveService.getStorageValue());
   }
 
 }

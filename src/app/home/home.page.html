@@ -8,17 +8,29 @@
 
 <ion-content padding>
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-        <ion-fab-button [routerLink]="'/add-place'">
+      <!--<ion-fab-button [routerLink]="'/add-place'">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>-->
+        <ion-fab-button (click)="check()">
           <ion-icon name="add"></ion-icon>
         </ion-fab-button>
-      </ion-fab>
+    </ion-fab>
 
-      <ion-list>
-        <ion-item *ngFor="let place of _places" (click)="onPlaceClicked(place)">
-          <ion-label>
-            <h2>{{ place.title }}</h2>
-            <p>{{ place.description }}</p>
-          </ion-label>
-        </ion-item>
-      </ion-list>
+    <ion-fab vertical="top" horizontal="start" slot="fixed">
+        <!--<ion-fab-button [routerLink]="'/add-place'">
+            <ion-icon name="add"></ion-icon>
+          </ion-fab-button>-->
+          <ion-fab-button (click)="check2()">
+            <ion-icon name="add"></ion-icon>
+          </ion-fab-button>
+    </ion-fab>
+
+    <ion-list>
+      <ion-item *ngFor="let place of _places" (click)="onPlaceClicked(place)">
+        <ion-label>
+          <h2>{{ place.title }}</h2>
+          <p>{{ place.description }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
 </ion-content>
